@@ -5,7 +5,7 @@ from tree_classes import BinTree, BinTreeNode
 
 node_list_options_to_be_inserted = [[3, 4, 6, 1, 5, 2, 7, 9, 11, 17, 12], [1, 4, 2, 6], [5, 5, 7, 6], [1, 1, 1, 1],[]]
 node_output_verify = [[([3,7,1,4],[1,3,4,7])], [([5,4,3,2],[2,3,4,5])],[([],[])]]
-
+#node_search_inputs = [([1,2,3,4],3,3),([5,2,1,19],3,None),([],3,None)]
 class TestTreeFunctions(unittest.TestCase):
 
     """ Initialize trees, then insert lists of nodes into them using parametrization,
@@ -38,6 +38,15 @@ class TestTreeFunctions(unittest.TestCase):
 
     """ Function that maps which test the program is currently executing. """
     def logPoint(self):
-        currentTest = self.id().split('.')[-1]
-        callingFunction = inspect.stack()[1][3]
-        print('in %s - %s()' % (currentTest, callingFunction))
+        current_test = self.id().split('.')[-1]
+        calling_function = inspect.stack()[1][3]
+        print('in %s - %s()' % (current_test, calling_function))
+
+    """ def test_search_function(self):
+           self.logPoint()
+           for tree_insert_inputs,search_input,result in node_search_inputs:
+               tree = BinTree()
+               for value in tree_insert_inputs:
+                   tree.insert(value)
+               with self.subTest():
+                   self.assertEqual(BinTreeNode.search(tree.root,search_input),result)"""

@@ -6,12 +6,10 @@ tree.insert(4)
 tree.insert(7)
 tree.insert(15)
 tree.insert(2)
+tree.search(15)
 
-tree.search(7)
-
-tree.root.get_tree()
-print("------")
-tree.insert(7)
-tree.root.get_tree()
+list_num = list()
+list_num=tree.root.tree_returner_helper()
+print(list_num)
 
 

@@ -30,12 +30,23 @@ class BinTreeNode:
         elif value > self.value:
             return BinTreeNode.search(self.right, value)
 
-    def get_tree(self):
+
+    def tree_returner_helper(self):
+        list_nums=list()
+        if self is None:
+            return []
+        else:
+            list_nums= self.get_tree(list_nums)
+            return list_nums
+
+
+    def get_tree(self,list_nums):
         if self.left:
-            self.left.get_tree()
-        print(self.value),
+            self.left.get_tree(list_nums)
+        list_nums.append(self.value)
         if self.right:
-            self.right.get_tree()
+            self.right.get_tree(list_nums)
+        return list_nums
 
 
 class BinTree:
